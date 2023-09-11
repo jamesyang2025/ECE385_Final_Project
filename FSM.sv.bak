@@ -1,0 +1,16 @@
+module FSM();
+
+always_ff @ (posedge clk)
+begin
+	if (Reset)
+		State <= Halted;
+	else
+		State <= Next_state;
+end
+always_comb
+begin
+	Next_state = State;
+	
+	unique case(State)
+		Halted : 
+		if ()
